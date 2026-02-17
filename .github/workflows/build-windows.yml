@@ -23,11 +23,7 @@ jobs:
           pip install pyinstaller
 
       - name: Build EXE with PyInstaller
-        run: |
-          pyinstaller --noconfirm --clean --onefile --windowed ^
-            --name "VideoBreakPro" ^
-            --add-data "assets;assets" ^
-            src\videobreak_pro.py
+run: pyinstaller --noconfirm --clean --onefile --windowed --name "VideoBreakPro" --add-data "assets;assets" src\videobreak_pro.py
 
       - name: Upload artifact (EXE)
         uses: actions/upload-artifact@v4
