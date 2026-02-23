@@ -21,15 +21,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # ✅ comando su UNA riga (compatibile PowerShell)
       - name: Build EXE with PyInstaller
-        run: |
-          pyinstaller ^
-            --noconfirm ^
-            --clean ^
-            --onefile ^
-            --windowed ^
-            --name VideoBreakPro ^
-            src\videobreak_pro.py
+        run: pyinstaller --noconfirm --clean --onefile --windowed --name VideoBreakPro src\videobreak_pro.py
 
       - name: Upload EXE artifact
         uses: actions/upload-artifact@v4
